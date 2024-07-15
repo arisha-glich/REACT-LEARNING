@@ -6,6 +6,7 @@ import DisplayNumber from './components/DisplayNumber'
 import AddNumber from './components/AddNumber'
 import AddNumberUseState from './components/AddNumber_usestate'
 import ReactFragment from './components/ReactFragment'
+import ToggleSwitch from './components/ToggleSwitch'
 import BasicCounter from './components/BasicCounter'
 
 
@@ -15,12 +16,16 @@ function App() {
   const numberes = [3, 3, 4, 5, 5]; */}
 
   return (
-    <> 
+
+    <>
+      <div className="App"> 
       {/* <DisplayNumber number={number} numbers={numberes} /> */}
        {/* <AddNumber/>*/}
        {/* <AddNumberUseState/> */}
        {/* <ReactFragment/> */}
-      <BasicCounter />
+       {/*  <BasicCounter /> */}
+      <ToggleSwitch />
+    </div>
     </>
   );
 }
