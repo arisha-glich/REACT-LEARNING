@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactFragment from './ReactFragment';
+
 
 const DisplayNumber = ({ number, numbers }) => {
   const multiplyNumbers = (array) => {
@@ -11,11 +13,14 @@ const DisplayNumber = ({ number, numbers }) => {
 
   return (
     <div>
+       
       <h1>DisplayNumber</h1>
       <p>Single Number: {number}</p>
       <p>Display All Numbers: {numbers.join(', ')}</p>
       <p>Multiplied Result: {multiplyNumbers(numbers)}</p>
       <button> Thankyou for entering data</button>
+      <ReactFragment/>
+     
     </div>
 
   );

@@ -6,14 +6,23 @@ import DisplayNumber from './components/DisplayNumber'
 import AddNumber from './components/AddNumber'
 import AddNumberUseState from './components/AddNumber_usestate'
 import ReactFragment from './components/ReactFragment'
+import BasicCounter from './components/BasicCounter'
 
 
 
 function App() {
+{/*const number = [2, 3];
+  const numberes = [3, 3, 4, 5, 5]; */}
+
   return (
-    <>
-      <ReactFragment/>
+    <> 
+      {/* <DisplayNumber number={number} numbers={numberes} /> */}
+       {/* <AddNumber/>*/}
+       {/* <AddNumberUseState/> */}
+       {/* <ReactFragment/> */}
+      <BasicCounter />
     </>
-  )
+  );
 }
-export default App
+
+export default App;
