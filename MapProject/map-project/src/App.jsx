@@ -1,19 +1,17 @@
 import { useState } from 'react';
 import './App.css';
-import './components/CountryDetail.css'
+import './styles/CountryDetail.css'
 import { Outlet } from 'react-router-dom';
-import Header from './components/Header';
+import Layout from './layout/Layouts';
+
 
 function App() {
-
   return (
     <div className='app'>
-      <Header/>
-      <Outlet/>
-      
-
-    </div>
-  );
+    <Layout/>
+    <Outlet/>
+  </div>
+  )
 }
 
-export default App;
+export default App

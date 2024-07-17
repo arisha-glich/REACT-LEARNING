@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
-import Search from './Search';
-import Filter from './Filter';
-import Countrieslistofcountries from './Countrieslistofcountries';
+import Search from '../components/Search';
+import Filter from '../components/Filter';
+import Countrieslistofcountries from '../components/Countrieslistofcountries';
 
 function Home() {
     const [query, setQuery] = useState('');
