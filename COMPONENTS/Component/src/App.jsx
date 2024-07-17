@@ -23,7 +23,7 @@ function App() {
        {/* <AddNumber/>*/}
        {/* <AddNumberUseState/> */}
        {/* <ReactFragment/> */}
-       {/*  <BasicCounter /> */}
+         {/*<BasicCounter /> */}
       <ToggleSwitch />
     </div>
     </>
