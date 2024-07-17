@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import countriesData from "../data";
+import  {countriesData} from '../data';
 import CountriesCard from "./CountriesCard";
 
 function CountriesList({ query, selectedRegion }) {
