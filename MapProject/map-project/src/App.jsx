@@ -8,6 +8,7 @@ import Layout from './layout/Layouts';
 function App() {
   return (
     <div className='app'>
+      
     <Layout/>
     <Outlet/>
   </div>
