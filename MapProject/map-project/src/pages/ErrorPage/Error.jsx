@@ -2,6 +2,7 @@ import react from 'react'
 import { useRouteError } from "react-router-dom";
 
 export default function Error() {
+  //useRouteError is a hook provided by react-router-dom that allows components to access the error thrown during the routing process
   const error = useRouteError();
   console.error(error);
 

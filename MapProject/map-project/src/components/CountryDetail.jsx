@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 
 export default function CountryDetail() {
-  const countryName = new URLSearchParams(window.location.search).get('name');
+  const countryName = new URLSearchParams(window.location.search).get('name');//getting name from URL
 
   const [countryData, setCountryData] = useState(null);
   const [error, setError] = useState(null);
@@ -28,6 +28,11 @@ export default function CountryDetail() {
             flag: data.flags.svg,
             tld: data.tld ? data.tld.join(', ') : 'N/A',
             languages: data.languages ? Object.values(data.languages).join(', ') : 'N/A',
+
+            /*Object.values(data.currencies): Converts the data.currencies object into an array of values.
+            .map((currency) => currency.name): 
+          Maps over each currency object in the array and extracts the name property of each currency.
+            .join(', '): Joins the array of currency names into a comma-separated string. */
             currencies: data.currencies
               ? Object.values(data.currencies).map((currency) => currency.name).join(', ')
               : 'N/A',
@@ -44,8 +49,12 @@ export default function CountryDetail() {
   if (error) {
     return <div>Error: {error}</div>;
   }
-
+ /*countryData is initially set to null when the component mounts.
+While the data is being fetched from the API, countryData remains null.
+During this period, the conditional rendering checks if countryData is still null.
+If countryData is null, the string 'loading...' is returned, displaying a simple loading message to the user. */
   return countryData === null ? (
+   
     'loading...'
   ) : (
     <main>
