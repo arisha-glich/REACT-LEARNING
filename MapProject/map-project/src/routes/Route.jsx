@@ -1,9 +1,9 @@
 // src/route.js
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Error from "../pages/Error";
-import ContactUs from "../pages/ContactUs";
-import Home from "../pages/Home";
+import Error from "../pages/ErrorPage/Error";
+import ContactUs from "../pages/ContactPage/ContactUs";
+import Home from "../pages/HomePage/Home";
 import CountryDetail from "../components/CountryDetail";
 import App from "../App";
 
