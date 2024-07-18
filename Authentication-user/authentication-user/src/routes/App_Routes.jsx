@@ -1,0 +1,23 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Signup from '../components/authentication/Signup';
+import Login from '../components/authentication/Login';
+import Dashboard from '../components/dashboard/Dashboard';
+import AdminBoard from '../components/admin/AdminBoard';
+
+function App_Routes() {
+    return (
+        <Router>
+            <div>
+                <Routes>
+                    <Route path="/" element={<AdminBoard />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                </Routes>
+            </div>
+        </Router>
+    );
+}
+
+export default App_Routes;
