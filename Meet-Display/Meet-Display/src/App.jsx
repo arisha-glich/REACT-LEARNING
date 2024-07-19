@@ -3,7 +3,6 @@ import './App.css'
 import Meetlist from './components/Meet/Meetlist'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
