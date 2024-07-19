@@ -4,6 +4,9 @@ import Signup from '../components/authentication/Signup';
 import Login from '../components/authentication/Login';
 import Dashboard from '../components/dashboard/Dashboard';
 import AdminBoard from '../components/admin/AdminBoard';
+//<Router></Router>  :  It keeps the UI in sync with the URL , history stack, smooth navigation
+//<Routes></Routes>  :  Wraps your entire application and provides the routing context.
+//<Route> </Route>   :  matching the current URL, and rendering the corresponding component(which is in Element)
 
 function App_Routes() {
     return (
