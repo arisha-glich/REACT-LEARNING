@@ -13,8 +13,7 @@ function ParticipantCard({ participant }) {
       )}
       <div className="participant-info">
         <h2>{name}</h2>
-        <p>{role}</p>
-      </div>
+        <p>{role}</p> </div>
     </div>
   );
 }
