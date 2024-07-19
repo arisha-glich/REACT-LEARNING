@@ -5,8 +5,13 @@ import './ParticipantList.css';
 function ParticipantList({ participantList }) {
   return (
     <div className="participant-list">
-      {participantList.map(participant => (
-        <ParticipantCard key={participant.name} participant={participant} />
+      {participantList.map((participant, index) => (
+        <ParticipantCard
+          key={index}
+          participantName={participant.name}
+          participantImage={participant.image}
+          participantRole={participant.role}
+        />
       ))}
     </div>
   );

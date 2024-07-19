@@ -1,19 +1,17 @@
 import React from 'react';
+import Avatar from './Avatar';
+import './ParticipantList.css';
 
-function ParticipantCard({ participant }) {
-  const { name, image, role } = participant;
-  const firstName = name.split(' ')[0];
 
+function ParticipantCard({ participantName, participantImage, participantRole }) {
   return (
     <div className="participant-card">
-      {image ? (
-        <img src={image} alt={firstName[0]} className="participant-image" />
-      ) : (
-        <div className="participant-initials">{firstName[0]}</div>
-      )}
+      <Avatar src={participantImage} alt={participantName} size={200} />
       <div className="participant-info">
-        <h2>{name}</h2>
-        <p>{role}</p> </div>
+        <h2>{participantName}</h2>
+        <p>{participantRole}</p>
+      </div>
+
     </div>
   );
 }

@@ -7,13 +7,16 @@ const participants = [
   { name: 'Arisha Nawaz', image: '/images/1.jpg', role: 'Student' },
   { name: 'Kashmala', image: '', role: 'Student' },
   { name: 'Ethan Hunt', image: '/images/4.jpeg', role: 'Student' },
-  { name: 'Fiona Gallagher', image: '/imagess/3.jpeg', role: 'Student' },
+  { name: 'Fiona Gallagher', image: '/images/3.jpeg', role: 'Student' },
   { name: 'George Michael', image: '/images/4.jpeg', role: 'Student' },
   { name: 'Hannah Montana', image: '/images/6.jpg', role: 'Student' },
   { name: 'Iris West', image: '/images/1.jpg', role: 'Student' },
   { name: 'Jack Dawson', image: '/images/9.jpg', role: 'Student' },
   { name: 'Katherine Pierce', image: '', role: 'Student' },
   { name: 'Liam Neeson', image: '', role: 'Student' },
+  { name: 'Hannah Montana', image: '/images/6.jpg', role: 'Student' },
+  { name: 'Iris West', image: '/images/1.jpg', role: 'Student' },
+  { name: 'Jack Dawson', image: '/images/9.jpg', role: 'Student' },
 ];
 
 function Meetlist() {
