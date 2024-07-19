@@ -8,10 +8,13 @@ import AddNumberUseState from './components/AddNumber_usestate'
 import ReactFragment from './components/ReactFragment'
 import ToggleSwitch from './components/ToggleSwitch'
 import BasicCounter from './components/BasicCounter'
+import Timer from './components/Timer'
 
 
 
 function App() {
+  const enddate= new Date();
+  enddate.setDate(enddate.getDate() + 365);
 {/*const number = [2, 3];
   const numberes = [3, 3, 4, 5, 5]; */}
 
@@ -24,7 +27,8 @@ function App() {
        {/* <AddNumberUseState/> */}
        {/* <ReactFragment/> */}
          {/*<BasicCounter /> */}
-      <ToggleSwitch />
+      {/*<ToggleSwitch />*/}
+      <Timer enddate={enddate}/>
     </div>
     </>
   );
