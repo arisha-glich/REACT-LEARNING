@@ -9,7 +9,7 @@ function ParticipantCard({ participant }) {
       {image ? (
         <img src={image} alt={firstName[0]} className="participant-image" />
       ) : (
-        <div className="participant-initials">{firstName}</div>
+        <div className="participant-initials">{firstName[0]}</div>
       )}
       <div className="participant-info">
         <h2>{name}</h2>
