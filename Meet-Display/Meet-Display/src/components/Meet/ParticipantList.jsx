@@ -6,7 +6,7 @@ function ParticipantList({ participantList = [] }) {
   return (
     <div className="participant-list">
       {participantList.map((participant, index) => (
-        <ParticipantCard key={index} participant={{}} />
+        <ParticipantCard key={index} participant={undefined} />
       ))}
     </div>
   );

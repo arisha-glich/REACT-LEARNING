@@ -3,7 +3,7 @@ import Avatar from "./Avatar";
 import "./ParticipantList.css";
 
 function ParticipantCard({ participant }) {
-  const { name, image, role } = participant;
+  const { name, image, role } = participant || {};
 
   return (
     <div className="participant-card">
