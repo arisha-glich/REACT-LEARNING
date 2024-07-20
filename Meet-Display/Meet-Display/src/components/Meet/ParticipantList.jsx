@@ -7,7 +7,7 @@ function ParticipantList({ participantList = [] }) {
     <div className="participant-list">
       {participantList.map((participant, index) => (
         <ParticipantCard 
-          key={index}
+          key={index} //  <ParticipantCard key={index} participant={undefined} />
           participantName={participant?.name}//optionl chaining
           participantImage={participant?.image}
           participantRole={participant?.role}
