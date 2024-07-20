@@ -1,17 +1,17 @@
-import React from 'react';
-import Avatar from './Avatar';
-import './ParticipantList.css';
+import React from "react";
+import Avatar from "./Avatar";
+import "./ParticipantList.css";
 
+function ParticipantCard({ participant }) {
+  const { name, image, role } = participant;
 
-function ParticipantCard({ participantName, participantImage, participantRole }) {
   return (
     <div className="participant-card">
-      <Avatar src={participantImage} alt={participantName} size={200} />
+      <Avatar src={image} alt={name} size={200} />
       <div className="participant-info">
-        <h2>{participantName}</h2>
-        <p>{participantRole}</p>
+        <h2>{name}</h2>
+        <p>{role}</p>
       </div>
-
     </div>
   );
 }
