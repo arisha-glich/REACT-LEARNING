@@ -1,6 +1,6 @@
 import React from 'react';
 import Avatar from './Avatar';
-import FavoriteButton from './FavoriteButton';
+import FavoriteButton from '../Favorite/FavoriteButton';
 
 
 function ParticipantCard({ participantName, participantImage, participantRole, onFavoriteToggle, isFavorite }) {

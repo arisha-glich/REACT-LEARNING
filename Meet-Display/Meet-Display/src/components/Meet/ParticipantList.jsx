@@ -1,8 +1,8 @@
 // ParticipantList.js
 import React from 'react';
 import ParticipantCard from './ParticipantCard';
-import FavouriteLists from './FavouriteLists';
-import './ParticipantList.css'
+import FavouriteLists from '../Favorite/FavouriteLists';
+import '../../styles/ParticipantList.css'
 import useFavorites from '../../hooks/useFavorites';
 
 

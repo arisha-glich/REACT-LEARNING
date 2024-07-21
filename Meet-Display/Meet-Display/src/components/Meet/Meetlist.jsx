@@ -4,7 +4,7 @@ import ParticipantList from './ParticipantList';
 const participants = [
   { name: 'Shawal Ali', image: '/images/6.jpg', role: 'Developer' },
   { name: 'Maham Hafeez', image: '/images/2.jpeg', role: 'Devolper' },
-  { name: '', image: '/images/1.jpg', role: 'Student' },
+  { name: 'Arisha Nawaz', image: '/images/1.jpg', role: 'Student' },
   { name: 'Kashmala', image: '', role: 'Student' },
   { name: 'Ethan Hunt', image: '/images/4.jpeg', role: 'Student' },
   { name: 'Fiona Gallagher', image: '/images/3.jpeg', role: 'Student' },

@@ -1,5 +1,5 @@
 import React from 'react';
-import ParticipantCard from './ParticipantCard';
+import ParticipantCard from '../Meet/ParticipantCard';
 
 
 function FavouriteLists({ favorites, onFavoriteToggle, isListVisible, onToggleListVisibility }) {
