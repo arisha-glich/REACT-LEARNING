@@ -1,0 +1,33 @@
+body{
+    background-color: pink;
+}
+.form-container {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .form-group {
+    margin-bottom: 1em;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  .form-group input,
+  .form-group select {
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+  }
+  
+  .form-group p {
+    color: red;
+    margin: 0;
+  }
+  
+  .submit-button {
+    padding: 0.5em 1em;
+  }
+  
