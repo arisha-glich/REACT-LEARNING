@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import useTimer from "../hooks/useTimer";
 
-function Timer({ enddate }) {
+function Timer({  }) {
+  const enddate= new Date();
+  enddate.setDate(enddate.getDate() + 1);
  const lefttime= useTimer(enddate)
   return (
     <div>

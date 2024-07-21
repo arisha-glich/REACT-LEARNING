@@ -9,12 +9,12 @@ import ReactFragment from './components/ReactFragment'
 import ToggleSwitch from './components/ToggleSwitch'
 import BasicCounter from './components/BasicCounter'
 import Timer from './components/Timer'
+import { TimerComponent } from './components/TimerComponet'
+
 
 
 
 function App() {
-  const enddate= new Date();
-  enddate.setDate(enddate.getDate() + 365);
 {/*const number = [2, 3];
   const numberes = [3, 3, 4, 5, 5]; */}
 
@@ -28,7 +28,8 @@ function App() {
        {/* <ReactFragment/> */}
          {/*<BasicCounter /> */}
       {/*<ToggleSwitch />*/}
-      <Timer enddate={enddate}/>
+     {/*<Timer enddate/>*/}
+       <TimerComponent/>
     </div>
     </>
   );
