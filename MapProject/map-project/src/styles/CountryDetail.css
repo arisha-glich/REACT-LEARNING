@@ -51,6 +51,18 @@
     font-size: 14px;
 }
 
+.border-link {
+    text-decoration: underline;
+    color: rgb(105, 102, 102);
+    margin-right: 10px;
+  }
+  
+  .border-link:hover {
+    color: rgb(14, 14, 114);
+    text-decoration: underline;
+  }
+  
+
 @media(max-width: 940px) {
     .country-details {
         flex-direction: column;
