@@ -105,6 +105,7 @@ const FormComponent = () => {
       </div>
 
       <button type="submit" className="submit-button">Submit</button>
+      <button type="reset" className="submit-button" onClick={resetForm}>Reset</button>
     </form>
   );
 };
