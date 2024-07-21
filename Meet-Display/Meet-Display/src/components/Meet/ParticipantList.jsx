@@ -1,27 +1,13 @@
-import React, { useState } from 'react';
+// ParticipantList.js
+import React from 'react';
 import ParticipantCard from './ParticipantCard';
 import FavouriteLists from './FavouriteLists';
-import './ParticipantList.css'; 
+import './ParticipantList.css'
+import useFavorites from '../../hooks/useFavorites';
+
 
 function ParticipantList({ participantList }) {
-  const [favorites, setFavorites] = useState([]);
-  const [isListVisible, setIsListVisible] = useState(false);
-
-  const handleFavoriteToggle = (participantName) => {
-    setFavorites(prevFavorites => {
-      const isFavorite = prevFavorites.some(participant => participant.name === participantName);//Check if the Participant is Already Favorite
-      if (isFavorite) {//Remove from Favorites if Already Favorite
-        return prevFavorites.filter(participant => participant.name !== participantName);
-      } else {//Add to Favorites if Not Already Favorite
-        const participantToAdd = participantList.find(participant => participant.name === participantName);
-        return [...prevFavorites, participantToAdd];
-      }
-    });
-  };
-
-  const handleToggleListVisibility = () => {
-    setIsListVisible(prevState => !prevState);
-  };
+  const { favorites, isListVisible, handleFavoriteToggle, handleToggleListVisibility } = useFavorites([]);
 
   return (
     <div>
@@ -33,7 +19,7 @@ function ParticipantList({ participantList }) {
             participantImage={participant.image}
             participantRole={participant.role}
             isFavorite={favorites.some(fav => fav.name === participant.name)}
-            onFavoriteToggle={handleFavoriteToggle}
+            onFavoriteToggle={() => handleFavoriteToggle(participant.name, participantList)}
           />
         ))}
       </div>
