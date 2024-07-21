@@ -13,8 +13,8 @@ const FormComponent = () => {
     confirmPassword: '',
   };
 
-  const { formData, errors, handleChange, resetForm} = useForm(initialFormValues);
-  const { validate } = useValidation(formData);
+  const { formData, errors, handleChange, resetForm, setErrors } = useForm(initialFormValues);
+  const { validate } = useValidation(formData, setErrors);
 
   const handleSubmit = (e) => {
     e.preventDefault();
