@@ -5,10 +5,10 @@ const useForm = (initialValues) => {
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target;//represent the name of the input field and its current value
     setFormData(prevState => ({
       ...prevState,
-      [name]: value,
+      [name]: value,//name is used to identify which input field's value should be updated
     }));
   };
   const resetForm = () => {
