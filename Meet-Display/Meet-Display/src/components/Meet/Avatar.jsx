@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Avatar({ src, alt, size }) {
-  const avatarSize = size || 200; // Default size is 100px if not provided
+  const avatarSize = size || 100; // Default size is 100px if not provided
   return (
     <div className="avatar-container" style={{ width: `${avatarSize}px`, height: `${avatarSize}px` }}>
       {src ? (

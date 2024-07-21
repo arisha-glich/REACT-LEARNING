@@ -1,22 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ParticipantCard from './ParticipantCard';
-import './ParticipantList.css';
+import FavouriteLists from './FavouriteLists';
+import './ParticipantList.css'; 
 
-function ParticipantList({ participantList = [] }) {
+function ParticipantList({ participantList }) {
+  const [favorites, setFavorites] = useState([]);
+  const [isListVisible, setIsListVisible] = useState(false);
+
+  const handleFavoriteToggle = (participantName) => {
+    setFavorites(prevFavorites => {
+      const isFavorite = prevFavorites.some(participant => participant.name === participantName);//Check if the Participant is Already Favorite
+      if (isFavorite) {//Remove from Favorites if Already Favorite
+        return prevFavorites.filter(participant => participant.name !== participantName);
+      } else {//Add to Favorites if Not Already Favorite
+        const participantToAdd = participantList.find(participant => participant.name === participantName);
+        return [...prevFavorites, participantToAdd];
+      }
+    });
+  };
+
+  const handleToggleListVisibility = () => {
+    setIsListVisible(prevState => !prevState);
+  };
+
   return (
-    <div className="participant-list">
-      {participantList.map((participant, index) => (
-        <ParticipantCard 
-<<<<<<< HEAD
-          key={index} //  <ParticipantCard key={index} participant={undefined} />
-          participantName={participant?.name}//optionl chaining
-          participantImage={participant?.image}
-          participantRole={participant?.role}
-=======
-          key={index}
->>>>>>> 8568989293860f9cd7ea0dd528186726a8b746ac
-        />
-      ))}
+    <div>
+      <div className="participant-list">
+        {participantList.map((participant, index) => (
+          <ParticipantCard
+            key={index}
+            participantName={participant.name}
+            participantImage={participant.image}
+            participantRole={participant.role}
+            isFavorite={favorites.some(fav => fav.name === participant.name)}
+            onFavoriteToggle={handleFavoriteToggle}
+          />
+        ))}
+      </div>
+      <FavouriteLists
+        favorites={favorites}
+        onFavoriteToggle={handleFavoriteToggle}
+        isListVisible={isListVisible}
+        onToggleListVisibility={handleToggleListVisibility}
+      />
     </div>
   );
 }

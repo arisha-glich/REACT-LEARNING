@@ -1,7 +1,29 @@
 body {
   background-color: rgb(84, 84, 89);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
 }
 
+/* Container for main content and favorites list */
+.container {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+/* Main content section */
+.main-content {
+  flex: 3;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Participant list styling */
 .participant-list {
   display: flex;
   flex-wrap: wrap;
@@ -10,6 +32,7 @@ body {
   padding: 20px;
 }
 
+/* Participant card styling */
 .participant-card {
   background-color: #838382;
   box-shadow: 0 4px 8px rgba(242, 242, 242, 0.2);
@@ -22,6 +45,7 @@ body {
   padding: 20px;
 }
 
+/* Participant info styling */
 .participant-info {
   padding: 20px;
 }
@@ -35,6 +59,7 @@ body {
   color: #fbf8f8;
 }
 
+/* Avatar styling */
 .avatar-container {
   display: flex;
   align-items: center;
@@ -59,6 +84,49 @@ body {
   font-size: 4em;
   color: white;
   background-color: #a8a9ab;
+}
+
+/* Sidebar (favorites list) styling */
+.sidebar {
+  flex: 1;
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Sidebar list styling */
+.favorites-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.favorites-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.favorite-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #444;
+  border-radius: 5px;
+}
+
+.favorite-icon {
+  font-size: 1.5em;
+  color: red;
 }
 
 /* Responsive Design */
@@ -87,6 +155,10 @@ body {
 
   .participant-info p {
     font-size: 0.9em;
+  }
+
+  .sidebar {
+    display: none; /* Hide sidebar on smaller screens */
   }
 }
 
