@@ -14,9 +14,9 @@ const participants = [
   { name: "Jack Dawson", image: "/images/9.jpg", role: "Student" },
   { name: "Katherine Pierce", image: "", role: "Student" },
   { name: "Liam Neeson", image: "", role: "Student" },
-  { name: "Hannah Montana", image: "/images/6.jpg", role: "Student" },
-  { name: "Iris West", image: "/images/1.jpg", role: "Student" },
-  { name: "Jack Dawson", image: "/images/9.jpg", role: "Student" },
+  { name: "Hannah", image: "/images/6.jpg", role: "Student" },
+  { name: "West", image: "/images/1.jpg", role: "Student" },
+  { name: "Dawson", image: "/images/9.jpg", role: "Student" },
 ];
 
 function Meetlist() {
