@@ -1,11 +1,11 @@
-
-import React, { useContext } from 'react';
+// src/components/Meet/ParticipantList.js
+import React from 'react';
 import ParticipantCard from './ParticipantCard';
 import '../../styles/ParticipantList.css';
-import { useFavorites } from '../Context/FavoritesContext.jsx'; 
+import { useFavorites } from '../Context/FavoritesContext';
 
 function ParticipantList({ participantList }) {
-  const { favorites, handleFavoriteToggle } = useFavorites()
+  const { favorites, handleFavoriteToggle } = useFavorites();
 
   return (
     <div>

@@ -8,6 +8,7 @@ function ShowFavorites() {
     isListVisible,
     handleToggleListVisibility,
     handleFavoriteToggle,
+    resetFavorites,
   } = useFavorites();
 
   return (
@@ -15,9 +16,9 @@ function ShowFavorites() {
       <button onClick={handleToggleListVisibility}>
         {isListVisible ? "Hide Favorites" : "Show Favorites"}
       </button>
+      <button onClick={resetFavorites}>Reset Favorites</button>
       {isListVisible && (
         <div>
-          <h3>Favorites:</h3>
           <div className="favorites-list">
             {favorites.map((fav, index) => (
               <ParticipantCard
@@ -26,7 +27,7 @@ function ShowFavorites() {
                 participantImage={fav.image}
                 participantRole={fav.role}
                 isFavorite={true}
-                onFavoriteToggle={handleFavoriteToggle}
+                onFavoriteToggle={() => handleFavoriteToggle(fav.name, favorites)}
               />
             ))}
           </div>

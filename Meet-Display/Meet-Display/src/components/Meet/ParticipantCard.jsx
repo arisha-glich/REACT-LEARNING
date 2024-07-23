@@ -1,3 +1,4 @@
+// src/components/Meet/ParticipantCard.js
 import React from "react";
 import Avatar from "./Avatar";
 import FavoriteButton from "../Favorite/FavoriteButton";

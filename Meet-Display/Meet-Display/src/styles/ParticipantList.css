@@ -13,6 +13,20 @@ body {
   flex: 1;
   width: 100%;
 }
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #ba1a0e; /* Red background */
+  color: rgb(227, 4, 4);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #efdbdb; 
+}
+
 
 /* Main content section */
 .main-content {
@@ -34,7 +48,7 @@ body {
 
 /* Participant card styling */
 .participant-card {
-  background-color: #838382;
+  background-color: #989898;
   box-shadow: 0 4px 8px rgba(242, 242, 242, 0.2);
   overflow: hidden;
   width: 100%;
@@ -44,6 +58,8 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+
+
 
 /* Participant info styling */
 .participant-info {
@@ -66,7 +82,8 @@ body {
   justify-content: center;
   border-radius: 50%;
   overflow: hidden;
-  background-color: #a8a9ab;
+  font-size: 100px;
+  background-color: #f5b504 ;
 }
 
 .avatar {
