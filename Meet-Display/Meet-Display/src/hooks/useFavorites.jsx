@@ -1,4 +1,4 @@
-// hooks/useFavorites.js
+// not using it RIGHTNOW
 import { useState } from 'react';
 
 const useFavorites = (initialFavorites = []) => {

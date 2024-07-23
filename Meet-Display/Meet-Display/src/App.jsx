@@ -1,14 +1,17 @@
-import { useState } from 'react'
-import './App.css'
-import Meetlist from './components/Meet/Meetlist'
+// src/App.jsx
+import React from 'react';
+import './App.css';
+import Meetlist from './components/Meet/Meetlist';
+import { FavoritesProvider } from './components/Context/FavoritesContext';
+import ShowFavorites from './components/Favorite/ShowFavorites';
 
 function App() {
-
   return (
-    <>
-   <Meetlist/>
-    </>
-  )
+    <FavoritesProvider>
+      <Meetlist />
+      <ShowFavorites />
+    </FavoritesProvider>
+  );
 }
 
-export default App
+export default App;

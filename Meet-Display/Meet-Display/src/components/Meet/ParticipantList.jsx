@@ -1,13 +1,11 @@
-// ParticipantList.js
-import React from 'react';
-import ParticipantCard from './ParticipantCard';
-import FavouriteLists from '../Favorite/FavouriteLists';
-import '../../styles/ParticipantList.css'
-import useFavorites from '../../hooks/useFavorites';
 
+import React, { useContext } from 'react';
+import ParticipantCard from './ParticipantCard';
+import '../../styles/ParticipantList.css';
+import { useFavorites } from '../Context/FavoritesContext.jsx'; 
 
 function ParticipantList({ participantList }) {
-  const { favorites, isListVisible, handleFavoriteToggle, handleToggleListVisibility } = useFavorites([]);
+  const { favorites, handleFavoriteToggle } = useFavorites()
 
   return (
     <div>
@@ -19,16 +17,12 @@ function ParticipantList({ participantList }) {
             participantImage={participant.image}
             participantRole={participant.role}
             isFavorite={favorites.some(fav => fav.name === participant.name)}
-            onFavoriteToggle={() => handleFavoriteToggle(participant.name, participantList)}
+            onFavoriteToggle={() =>
+              handleFavoriteToggle(participant.name, participantList)
+            }
           />
         ))}
       </div>
-      <FavouriteLists
-        favorites={favorites}
-        onFavoriteToggle={handleFavoriteToggle}
-        isListVisible={isListVisible}
-        onToggleListVisibility={handleToggleListVisibility}
-      />
     </div>
   );
 }
