@@ -1,7 +1,5 @@
 import React from "react";
 
-//isFavorite: A boolean prop
-//onToggle: A callback function to handle the toggling of the favorite status when the button is clicked
 function FavoriteButton({ isFavorite, onToggle }) {
   return (
     <button

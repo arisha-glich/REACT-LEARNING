@@ -23,7 +23,7 @@ function ParticipantCard({
       </div>
       <FavoriteButton
         isFavorite={isFavorite}
-        onToggle={() => onFavoriteToggle(participantName)}
+        onToggle={onFavoriteToggle}
       />
     </div>
   );

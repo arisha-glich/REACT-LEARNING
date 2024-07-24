@@ -1,33 +1,63 @@
-// not using it RIGHTNOW
-import { useState } from 'react';
+// src/hooks/useFavorites.js
+import { useState, useEffect, useCallback } from 'react';
+import { getFavorites, addFavorite, removeFavorite } from '../service/favoritesService';
 
-const useFavorites = (initialFavorites = []) => {
-  const [favorites, setFavorites] = useState(initialFavorites);
-  const [isListVisible, setIsListVisible] = useState(false);
+export const useFavorites = () => {
+  const [favorites, setFavorites] = useState([]);
 
-  
-  const handleFavoriteToggle = (participantName, participantList) => {
-    setFavorites(prevFavorites => {//Check if Participant is Already a Favorite:
-      const isFavorite = prevFavorites.some(participant => participant.name === participantName);
-      if (isFavorite) {//If the participant is already a favorite (isFavorite is true)
-        return prevFavorites.filter(participant => participant.name !== participantName);
-      } else {//If the participant is not a favorite (isFavorite is false)
-        const participantToAdd = participantList.find(participant => participant.name === participantName);
-        return [...prevFavorites, participantToAdd];
-      }
-    });
+  // Fetch favorites from the API
+  const fetchFavorites = useCallback(async () => {
+    try {
+      const data = await getFavorites();
+      console.log('i am fetching first time')
+      console.log(data)
+      setFavorites(data);
+    } catch (error) {
+      console.error('Error fetching favorites:', error);
+    }
+  }, []);
+
+  // Fetch favorites when the component mounts
+  useEffect(() => {
+    fetchFavorites();
+  }, [fetchFavorites]);
+
+  // Handle adding a favorite
+  const handleAddFavorite = async (participant) => {
+    try {
+      await addFavorite(participant);
+      console.log('ADD successfully')
+      await fetchFavorites();
+      console.log('refetching after adding') // Refetch favorites after adding
+    } catch (error) {
+      console.error('Error adding favorite:', error);
+    }
   };
 
-  const handleToggleListVisibility = () => {
-    setIsListVisible(prevState => !prevState);
+  // Handle removing a favorite
+  const handleRemoveFavorite = async (id) => {
+    try {
+      await removeFavorite(id);
+      console.log('Remove successfully')
+      await fetchFavorites(); // Refetch favorites after removing
+      console.log('refeching after removing')
+    } catch (error) {
+      console.error('Error removing favorite:', error);
+    }
   };
+
+  // Reset the state to initial values
+ // const handleReset = () => {
+   // alert(' Do you want to Reset All favorites?')
+    //setFavorites([]);
+    //setLoading(true);
+    //setError(null);
+  //};
 
   return {
     favorites,
-    isListVisible,
-    handleFavoriteToggle,
-    handleToggleListVisibility
+    handleAddFavorite,
+    handleRemoveFavorite,
+    //handleReset
   };
 };
-
-export default useFavorites;

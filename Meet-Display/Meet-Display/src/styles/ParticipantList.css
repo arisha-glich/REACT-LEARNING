@@ -48,7 +48,7 @@ button:hover {
 
 /* Participant card styling */
 .participant-card {
-  background-color: #989898;
+  background-color: #838382;
   box-shadow: 0 4px 8px rgba(242, 242, 242, 0.2);
   overflow: hidden;
   width: 100%;
@@ -59,9 +59,6 @@ button:hover {
   padding: 20px;
 }
 
-
-
-/* Participant info styling */
 .participant-info {
   padding: 20px;
 }
@@ -74,6 +71,7 @@ button:hover {
 .participant-info p {
   color: #fbf8f8;
 }
+
 
 /* Avatar styling */
 .avatar-container {
@@ -145,6 +143,20 @@ button:hover {
   font-size: 1.5em;
   color: red;
 }
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #fefefe; /* Red background */
+  color: rgb(227, 4, 4);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #efdbdb; 
+}
+
 
 .favorites-list {
   display: flex;
