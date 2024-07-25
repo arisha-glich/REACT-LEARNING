@@ -52,6 +52,7 @@ function ParticipantsContainer() {
               }
             }}
             isFavorite={(id) => favorites.some(fav => fav.id === id)}
+            //The isFavorite function is used to check if a participant with a given id is marked as a favorite. 
           />
           <h1>Favorite Participants</h1>
           <FavoritesList favorites={favorites} onRemoveFavorite={handleRemoveFavorite} />
