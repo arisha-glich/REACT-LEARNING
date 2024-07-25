@@ -5,6 +5,32 @@
   text-align: center;
 }
 
+/* General styles for the container */
+.container {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+/* Styles for the extraProp element */
+.extraProp {
+  color: red;
+  font-weight: bold;
+}
+
+/* Optional: Add styles for enhanced components */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+
 .logo {
   height: 6em;
   padding: 1.5em;
