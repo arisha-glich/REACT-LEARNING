@@ -4,17 +4,21 @@ import Avatar from "./Avatar";
 import FavoriteButton from "../Favorite/FavoriteButton";
 
 function ParticipantCard({
-  participantName,
-  participantImage,
-  participantRole,
-  onFavoriteToggle,
-  isFavorite,
+  participantName = "Unknown",
+  participantImage = "",
+  participantRole = "Role not specified",
+  onFavoriteToggle = () => {},
+  isFavorite = false,
 }) {
+  // Ensure participantName is at least one character long
+  const displayName = participantName.length > 0 ? participantName[0] : '?';
+  const avatarSrc = participantImage || displayName;
+
   return (
     <div className="participant-card">
       <Avatar
-        src={participantImage || participantName[0]}
-        alt={participantName[0]}
+        src={avatarSrc}
+        alt={displayName}
         size={150}
       />
       <div className="participant-info">

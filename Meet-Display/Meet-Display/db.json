@@ -1,12 +1,6 @@
 {
   "favorites": [
     {
-      "id": "19",
-      "name": "Oliver Stone",
-      "image": "",
-      "role": "Student"
-    },
-    {
       "id": "24",
       "name": "Natalie Portman",
       "image": "",
@@ -31,26 +25,26 @@
       "role": "Student"
     },
     {
-      "id": "2",
-      "name": "Maham Hafeez",
+      "id": "17",
+      "name": "Michael Clark",
       "image": "/images/2.jpeg",
       "role": "Developer"
     },
     {
-      "id": "6",
-      "name": "Fiona Gallagher",
-      "image": "/images/3.jpeg",
+      "id": "18",
+      "name": "Laura Scott",
+      "image": "/images/4.jpeg",
+      "role": "Manager"
+    },
+    {
+      "id": "20",
+      "name": "Sophie Turner",
+      "image": "/images/1.jpg",
       "role": "Student"
     },
     {
-      "id": "1",
-      "name": "Shawal Ali",
-      "image": "/images/6.jpg",
-      "role": "Developer"
-    },
-    {
-      "id": "5",
-      "name": "Ethan Hunt",
+      "id": "19",
+      "name": "Oliver Stone",
       "image": "",
       "role": "Student"
     }

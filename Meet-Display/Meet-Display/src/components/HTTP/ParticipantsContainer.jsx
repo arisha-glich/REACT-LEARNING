@@ -4,6 +4,7 @@ import ParticipantListTwo from './ParticipantListTwo';
 import '../../styles/ParticipantList.css';
 import FavoritesList from './FavoritesList';
 import { useFavorites } from '../../hooks/useFavorites';
+import { removeFavorite } from '../../service/favoritesService';
 
 const API_URL = 'http://localhost:5000/participants'; 
 
@@ -12,7 +13,7 @@ function ParticipantsContainer() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const { favorites, handleAddFavorite, handleRemoveFavorite } = useFavorites();
+  const { favorites, handleAddFavorite, handleRemoveFavorite, handleReset} = useFavorites();
 
   // Fetch participants from the API
   const fetchParticipants = async () => {
@@ -58,7 +59,7 @@ function ParticipantsContainer() {
           <FavoritesList favorites={favorites} onRemoveFavorite={handleRemoveFavorite} />
         </>
       )}
-     {/*<button onClick={handleReset} className="reset-button">Reset</button> */} 
+     <button onClick={handleReset} className="reset-button">Reset</button> 
     </div>
   );
 }

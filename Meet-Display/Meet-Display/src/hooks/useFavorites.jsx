@@ -1,19 +1,24 @@
 // src/hooks/useFavorites.js
 import { useState, useEffect, useCallback } from 'react';
-import { getFavorites, addFavorite, removeFavorite } from '../service/favoritesService';
+import { getFavorites, addFavorite, removeFavorite, removeAllFavorites } from '../service/favoritesService';
 
 export const useFavorites = () => {
   const [favorites, setFavorites] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   // Fetch favorites from the API
   const fetchFavorites = useCallback(async () => {
+    setLoading(true);
+    setError(null);
     try {
       const data = await getFavorites();
-      console.log('i am fetching first time')
-      console.log(data)
       setFavorites(data);
     } catch (error) {
+      setError('Error fetching favorites.');
       console.error('Error fetching favorites:', error);
+    } finally {
+      setLoading(false);
     }
   }, []);
 
@@ -24,40 +29,57 @@ export const useFavorites = () => {
 
   // Handle adding a favorite
   const handleAddFavorite = async (participant) => {
+    setLoading(true);
+    setError(null);
     try {
       await addFavorite(participant);
-      console.log('ADD successfully')
-      await fetchFavorites();
-      console.log('refetching after adding') // Refetch favorites after adding
+      await fetchFavorites(); // Refetch favorites after adding
     } catch (error) {
+      setError('Error adding favorite.');
       console.error('Error adding favorite:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
   // Handle removing a favorite
   const handleRemoveFavorite = async (id) => {
+    setLoading(true);
+    setError(null);
     try {
       await removeFavorite(id);
-      console.log('Remove successfully')
       await fetchFavorites(); // Refetch favorites after removing
-      console.log('refeching after removing')
     } catch (error) {
+      setError('Error removing favorite.');
       console.error('Error removing favorite:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
-  // Reset the state to initial values
- // const handleReset = () => {
-   // alert(' Do you want to Reset All favorites?')
-    //setFavorites([]);
-    //setLoading(true);
-    //setError(null);
-  //};
+  // Handle resetting all favorites
+  const handleReset = async () => {
+    if (window.confirm('Do you want to reset all favorites? This action cannot be undone.')) {
+      setLoading(true);
+      setError(null);
+      try {
+        await removeAllFavorites(); // Reset favorites on the server
+        setFavorites([]); // Clear local favorites
+      } catch (error) {
+        setError('Error resetting favorites.');
+        console.error('Error resetting favorites:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+  };
 
   return {
     favorites,
+    loading,
+    error,
     handleAddFavorite,
     handleRemoveFavorite,
-    //handleReset
+    handleReset
   };
 };

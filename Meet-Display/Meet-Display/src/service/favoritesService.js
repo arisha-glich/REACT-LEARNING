@@ -2,7 +2,6 @@
 import axios from 'axios';
 
 const FAVORITES_API_URL = 'http://localhost:5000/favorites';
-const PARTICIPANTS_API_URL = 'http://localhost:5000/participants'; 
 
 // Fetch all favorites
 export const getFavorites = async () => {
@@ -22,8 +21,10 @@ export const removeFavorite = async (id) => {
   return getFavorites(); // Return updated list
 };
 
-// Fetch all participants
-export const getParticipants = async () => {
-  const response = await axios.get(PARTICIPANTS_API_URL);
-  return response.data;
-};
+// Remove all favorites
+export const removeAllFavorites = async () => {
+    const allFavorites = await getFavorites(); // Fetch all favorites
+    const deleteRequests = allFavorites.map(favorite => axios.delete(`${FAVORITES_API_URL}/${favorite.id}`));
+    await Promise.all(deleteRequests); 
+    return getFavorites(); // Return updated list (which should be empty)
+  };
