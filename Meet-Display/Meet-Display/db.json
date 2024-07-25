@@ -1,54 +1,5 @@
 {
-  "favorites": [
-    {
-      "id": "24",
-      "name": "Natalie Portman",
-      "image": "",
-      "role": "Student"
-    },
-    {
-      "id": "23",
-      "name": "Ryan Reynolds",
-      "image": "/images/4.jpeg",
-      "role": "Student"
-    },
-    {
-      "id": "22",
-      "name": "Emily Davis",
-      "image": "",
-      "role": "Student"
-    },
-    {
-      "id": "21",
-      "name": "Ethan Hawke",
-      "image": "/images/6.jpg",
-      "role": "Student"
-    },
-    {
-      "id": "17",
-      "name": "Michael Clark",
-      "image": "/images/2.jpeg",
-      "role": "Developer"
-    },
-    {
-      "id": "18",
-      "name": "Laura Scott",
-      "image": "/images/4.jpeg",
-      "role": "Manager"
-    },
-    {
-      "id": "20",
-      "name": "Sophie Turner",
-      "image": "/images/1.jpg",
-      "role": "Student"
-    },
-    {
-      "id": "19",
-      "name": "Oliver Stone",
-      "image": "",
-      "role": "Student"
-    }
-  ],
+  "favorites": [],
   "participants": [
     {
       "id": "1",
