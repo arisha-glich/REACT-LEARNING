@@ -1,7 +1,7 @@
 // src/services/favoritesService.js
 import apiClient from './axiosConfig';
 
-const FAVORITES_API_URL = '/favorites';
+const FAVORITES_API_URL = import.meta.env.VITE_FAVORITES_API_URL;
 
 // Fetch all favorites
 export const getFavorites = async () => {
